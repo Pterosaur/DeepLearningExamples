@@ -13,6 +13,7 @@
 
 ARG FROM_IMAGE_NAME=nvcr.io/nvidia/pytorch:19.08-py3
 FROM ${FROM_IMAGE_NAME}
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y pbzip2 pv bzip2 cabextract
 
 ENV BERT_PREP_WORKING_DIR /workspace/bert/data
