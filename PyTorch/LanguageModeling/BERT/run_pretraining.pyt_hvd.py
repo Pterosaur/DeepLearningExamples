@@ -362,7 +362,7 @@ def main():
 
 
                     torch.cuda.synchronize()
-                    # iter_end = time.time()
+                    iter_end = time.time()
                     if hvd.rank() == 0:
                         print('epoch {} global {} step {} : {}'.format(epoch, global_step, training_steps, iter_end - iter_start))
                     
