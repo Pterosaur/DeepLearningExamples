@@ -1,0 +1,9 @@
+FROM bert_pyt
+
+# Re-Install NCCL
+RUN apt remove libnccl2 libnccl-dev -y && \
+    dpkg -i nccl-repo-ubuntu1804-2.4.8-ga-cuda10.1_1-1_amd64.deb && \
+    apt update -y && apt install libnccl2 libnccl-dev -y
+
+# Install Horovod
+RUN HOROVOD_GPU_ALLREDUCE=NCCL pip install --no-cache-dir horovod 
