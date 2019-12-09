@@ -1,6 +1,6 @@
 #!/bin/bash
 
-log_dir="prof"
+log_dir="logs"
 mkdir ${log_dir} -p
 
 for batch_size in 1 2 3 4 5 6
