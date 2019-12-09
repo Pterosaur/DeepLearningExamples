@@ -2,8 +2,6 @@
 
 echo "Container nvidia build = " $NVIDIA_BUILD_ID
 
-# export CUDA_VISIBLE_DEVICES=4,5,6,7
-
 train_batch_size=${1:-6}
 learning_rate=${2:-"6e-3"}
 num_gpus=${3:-4}
@@ -12,7 +10,7 @@ create_logfile=${5:-"true"}
 seed=${6:-$RANDOM}
 job_name=${7:-"bert_lamb_pretraining"}
 
-DATASET=hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/books_wiki_en_corpus # change this for other datasets
+DATASET=performance_profiling_data
 
 DATA_DIR=data/${DATASET}/
 BERT_CONFIG=bert_config.json
